@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Listar e outras ações</title>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                </div>
+                <div class="col-sm">
+                    <div class="col-sm text-center">
+                        <h1 class="mt-5 mb-4">Lista de Clientes</h1>
+                        <h:form>
+                            <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+                            <h:panelGrid columns="1">
+                                <h:dataTable class="table-bordered" border="1" value="#{clienteBean.clientes}" var="client">
+                                    <h:column>
+                                        <f:facet name="header">Nome</f:facet>
+                                            #{client.nome}
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">CPF</f:facet>
+                                            #{client.cpf}
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">Telefone</f:facet>
+                                            #{client.telefone.completo}
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">E-Mail</f:facet>
+                                            #{client.email}
+                                    </h:column>
+                                    <h:column>
+                                        <h:commandLink class="btn badge-danger" value="Excluir" action="#{clienteBean.excluir(client)}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <h:commandButton class="btn badge-lightp" value="Editar" action="#{clienteBean.editar(client)}"/>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:panelGrid>
+                            <h:panelGrid columns="1">
+                                <h:commandButton class="btn btn-primary" value="Menu" action="menu.xhtml"/>
+                            </h:panelGrid>
+                        </h:form>
+                    </div>
+                </div>
+                <div class="col-sm">
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

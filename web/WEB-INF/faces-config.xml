@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    
+    <validator>
+        <validator-id>validator.CpfValidator</validator-id>
+        <validator-class>validator.CpfValidator</validator-class>
+    </validator>
+
+    <converter>
+        <description>Configurando converter para classe Telefone</description>
+        <converter-id>telefoneConverter</converter-id>
+        <converter-class>converter.TelefoneConverter</converter-class>
+    </converter>
+</faces-config>

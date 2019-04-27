@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    <h:head>
+        <title>Editar Usuário</title>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                </div>
+                <div class="col-sm">
+
+                    <h1 class="mt-5 mb-4">Editar Usuário</h1>
+                    <h:form>
+
+                        <div class="form-group">
+                            <h:outputLabel value="Nome: "/>
+                            <h:inputText class="form-control" id="nome" value="#{usuarioBean.usuario.nome}" label="nome">
+                                <f:validateLength minimum="5" maximum="150" />
+                            </h:inputText>
+                            <h:message for="nome" style="color:gray" />
+                        </div>
+                        <div class="form-group">
+                            <h:outputLabel value="Identificador: "/>
+                            <h:inputText class="form-control" id="identificador" value="#{usuarioBean.usuario.identificador}" readonly="true" required="true" label="identificador">
+                                <f:validateLength minimum="5" maximum="20" />
+                            </h:inputText>
+                            <h:message for="identificador" style="color:gray" />
+                        </div>
+                        <div class="form-group">
+                            <h:outputLabel value="Senha: "/>
+                            <h:inputSecret class="form-control" id="senha" value="#{usuarioBean.usuario.senha}" required="true" label="senha">
+                                <f:validateLength minimum="5" maximum="11" />
+                            </h:inputSecret>
+                            <h:message for="senha" style="color:gray" />
+                        </div>
+                        <div class="btn-group">
+                            <h:commandButton value="Ok" action="#{usuarioBean.atualizar(usuarioBean.usuario)}" class="btn btn-primary"/>
+                            <h:commandButton value="Menu" action="menu.xhtml" class="btn btn-group"/>
+                        </div>
+                    </h:form>
+                </div>
+                <div class="col-sm">
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+
