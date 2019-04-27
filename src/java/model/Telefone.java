@@ -82,10 +82,7 @@ public class Telefone implements Serializable {
         if (!Objects.equals(this.codigoArea, other.codigoArea)) {
             return false;
         }
-        if (!Objects.equals(this.numero, other.numero)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.numero, other.numero);
     }
 
     @Override

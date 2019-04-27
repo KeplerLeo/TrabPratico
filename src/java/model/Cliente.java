@@ -90,10 +90,7 @@ public class Cliente implements Serializable {
         if (!Objects.equals(this.email, other.email)) {
             return false;
         }
-        if (!Objects.equals(this.telefone, other.telefone)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.telefone, other.telefone);
     }
 
     public List<Cliente> listar() {

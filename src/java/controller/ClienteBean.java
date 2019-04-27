@@ -1,12 +1,10 @@
 package controller;
 
-import model.Cliente;
 import java.io.Serializable;
-import java.util.LinkedList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
+import model.Cliente;
 
 @ManagedBean
 @SessionScoped

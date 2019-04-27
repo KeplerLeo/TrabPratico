@@ -3,22 +3,25 @@
  */
 package converter;
 
-import model.Telefone;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
+import model.Telefone;
 
 @FacesConverter("telefoneConverter")
 public class TelefoneConverter implements Converter {
+
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object value) {
-        if (value == null) 
+        if (value == null) {
             return null;
-        return "+" + ((Telefone)value).toString();
+        }
+        return "+" + ((Telefone) value).toString();
     }
+
     @Override
     public Object getAsObject(FacesContext context, UIComponent component,
             String value) {
@@ -27,7 +30,7 @@ public class TelefoneConverter implements Converter {
         }
 
         String somenteNumeros = value.replaceAll("[^0-9]", "");//de +55 (11) 2626-9415 para 551126269415
-         try {
+        try {
             String codigoPais = somenteNumeros.substring(0, 2);
             String codigoArea = somenteNumeros.substring(2, 4);
             String numero = somenteNumeros.substring(4);

@@ -2,7 +2,6 @@ package model;
 
 import java.sql.*;
 import java.util.*;
-import converter.TelefoneConverter;
 
 public class ClienteDAO {
 
